@@ -3,6 +3,8 @@ import cv2
 orig = cv2.imread("Perro_salchicha.jpg")
 image = orig.copy()
 template = cv2.imread("Muestra.jpg")
+
+
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 template_gray = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
 methods = [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED, cv2.TM_CCORR,
@@ -15,11 +17,10 @@ for method in methods:
 
     if method == cv2.TM_SQDIFF or method == cv2.TM_SQDIFF_NORMED:
         x1, y1 = min_loc
-        x2, y2 = min_loc[0] + template.shape[1], min_loc[1] + template.shape[0]
+        x2, y2 = min_loc[0] + template.shape[1], min_loc[1] + template.shape[0] #Localizacion del valor minimo
     else:
         x1, y1 = max_loc
-        
-        x2, y2 = max_loc[0] + template.shape[1], max_loc[1] + template.shape[0]
+        x2, y2 = max_loc[0] + template.shape[1], max_loc[1] + template.shape[0] #En todas las demas localizacion del valor maximo
 
     cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 3)
     cv2.imshow("Image", image)

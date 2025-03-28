@@ -19,7 +19,7 @@ imagen_laplaciana = cv2.filter2D(borde_duplicado,-1, kernel_laplaciano)
 imagen_laplaciana_recortada = imagen_laplaciana[1:-1, 1:-1]
 
 # Guardar en formato .npy
-np.save('22310284filtro1.npy', np.array([imagen, imagen_laplaciana_recortada]))
+np.save('22310284filtro1.npy', np.array([borde_duplicado, imagen_laplaciana]))
 
 plt.figure(figsize=(10, 6))
 

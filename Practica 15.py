@@ -1,3 +1,4 @@
+#Javier Alejandro Pérez Nuño 22310284 6E2
 import numpy as np
 import matplotlib.pyplot as plt
 

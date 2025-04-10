@@ -1,3 +1,4 @@
+#Javier Alejandro Pérez Nuño 22310284 6E2
 import cv2
 
 imagen = cv2.imread('Tornillos.jpg')

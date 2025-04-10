@@ -1,3 +1,4 @@
+#Javier Alejandro Pérez Nuño 22310284 6E2
 import cv2
 
 orig = cv2.imread("Perro_salchicha.jpg")

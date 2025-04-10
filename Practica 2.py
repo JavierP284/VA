@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#Javier Alejandro Pérez Nuño 22310284 6E2
 """
 Created on Wed Feb 12 16:25:15 2025
 

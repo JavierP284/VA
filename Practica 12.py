@@ -13,6 +13,16 @@ if not cap.isOpened():
     print("Error opening video file")  # Mostrar mensaje de error si no se puede abrir
     exit()
 
+# Obtener las propiedades del video original
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))  # Ancho del video
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))  # Alto del video
+fps = int(cap.get(cv2.CAP_PROP_FPS))  # Fotogramas por segundo
+
+# Inicializar el objeto VideoWriter para guardar el video procesado
+output_file = 'Personas_caminando_procesado.mp4'
+fourcc = cv2.VideoWriter_fourcc(*'XVID')  # Codec para el archivo de salida
+out = cv2.VideoWriter(output_file, fourcc, fps, (frame_width, frame_height))
+
 # Procesar cada fotograma del video en un bucle
 while cap.isOpened():
     # Leer el siguiente fotograma del video
@@ -42,6 +52,9 @@ while cap.isOpened():
         x, y, w, h = cv2.boundingRect(cnt)  # Obtener las coordenadas del rectángulo delimitador
         cv2.rectangle(frame_out, (x, y), (x + w, y + h), (0, 255, 0), 2)  # Dibujar el rectángulo en verde
 
+    # Guardar el fotograma procesado en el archivo de salida
+    out.write(frame_out)
+
     # Mostrar el fotograma procesado con los rectángulos dibujados
     cv2.imshow('Frame_final', frame_out)
 
@@ -51,4 +64,5 @@ while cap.isOpened():
 
 # Liberar los recursos utilizados
 cap.release()  # Liberar el archivo de video
+out.release()  # Liberar el archivo de salida
 cv2.destroyAllWindows()  # Cerrar todas las ventanas de OpenCV

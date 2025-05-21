@@ -1,3 +1,8 @@
+#Perceptron
+
+#Javier Alejandro Pérez Nuño
+#22310284
+
 import numpy as np
 
 w = np.array([1, 1, 1])

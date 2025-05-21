@@ -5,9 +5,9 @@
 
 import numpy as np
 
-w = np.array([1, 1, 1])
+w = np.array([1, 1, 1]) # Inicializar el vector de pesos
 
-X = np.array([[1, -1, -1],
+X = np.array([[1, -1, -1], 
               [1, -1, 1],
               [1, 1, -1],
               [1, 1, 1]
@@ -15,7 +15,7 @@ X = np.array([[1, -1, -1],
 
 yd = np.array([-1, -1, -1, 1])
 
-alpha = 0.5
+alpha = 0.5 # Tasa de aprendizaje
 
 for x, yd_i in zip(X, yd):  # Cambiar el nombre de la variable de iteración
     y = np.sign(np.dot(w, x))  # Producto punto entre w y x

@@ -24,6 +24,7 @@ for x, yd_i in zip(X, yd):  # Cambiar el nombre de la variable de iteración
 
 ys = []  # Inicializar la lista para guardar las salidas
 
+#Probar el perceptrón con las entradas
 for x, yd_i in zip(X, yd):  # Cambiar el nombre de la variable de iteración
     y = np.sign(np.dot(w, x))  # Producto punto entre w y x
     ys.append(y)  # Guardar la salida

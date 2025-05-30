@@ -1,3 +1,7 @@
+# Javier Alejandro Pérez Nuño
+# 22310284
+# Practica 17: Clasificación de imágenes con MNIST usando PyTorch
+
 import torch as t
 import torchvision.datasets as datasets 
 import torchvision.transforms as transforms
